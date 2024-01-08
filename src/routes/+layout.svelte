@@ -2,7 +2,6 @@
 	import { browser } from '$app/environment';
 	import { page } from '$app/stores';
 	import { webVitals } from '$lib/vitals';
-	import Header from './Header.svelte';
 	import './styles.css';
 
 	/** @type {import('./$types').LayoutServerData} */
@@ -17,46 +16,45 @@
 	}
 </script>
 
-<div class="app">
-	<Header />
-
+<div class="root">
 	<main>
 		<slot />
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<div>
+			Hussam Khatib
+			<a href="https://twitter.com/hussamkhatib3">(@hussamkhatib3)</a>
+		</div>
+		<div><a href="https://github.com/hussamkhatib">Github</a></div>
 	</footer>
 </div>
 
 <style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
+	.root {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		padding: 2rem;
+		box-sizing: border-box;
+		height: 100vh;
+		font-size: 1.125rem;
+		line-height: 1.75rem;
 	}
 
 	main {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding: 1rem;
 		width: 100%;
-		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
 	}
 
 	footer {
 		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
+		justify-content: space-between;
+		color: #6b7280;
+		font-size: 0.8rem;
 	}
 
 	@media (min-width: 480px) {
