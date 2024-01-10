@@ -36,7 +36,7 @@
 		grid-template-rows: 1fr auto;
 		padding: 2rem;
 		box-sizing: border-box;
-		height: 100vh;
+		height: 100dvh;
 		font-size: 1.125rem;
 		line-height: 1.75rem;
 	}
