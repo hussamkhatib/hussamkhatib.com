@@ -10,9 +10,9 @@
 	<footer>
 		<div>
 			Hussam Khatib
-			<a href="https://twitter.com/hussamkhatib3">(@hussamkhatib3)</a>
+			<a target="_blank" href="https://twitter.com/hussamkhatib3">(@hussamkhatib3)</a>
 		</div>
-		<div><a href="https://github.com/hussamkhatib">Github</a></div>
+		<div><a target="_blank" href="https://github.com/hussamkhatib">Github</a></div>
 	</footer>
 </div>
 
