@@ -44,14 +44,6 @@
    ...
    ```
 
-5. **Add your blog posts**
-
-Create a new .mdx file for each blog post inside the app/blog folder. For example:
-app/blog/your-article-slug/page.mdx.
-
-Example blog post structure in .mdx:
-
-```mdx
 # Your Article Title
 
 Introduction
