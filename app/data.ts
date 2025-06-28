@@ -28,6 +28,14 @@ export const SOCIAL_LINKS: SocialLink[] = [
     link: 'https://www.instagram.com/hussamkhatib_/',
   },
   {
+    label: 'X',
+    link: 'https://x.com/hussamkhatib3',
+  },
+  {
+    label: 'GitHub',
+    link: 'https://github.com/hussamkhatib',
+  },
+  {
     label: 'LinkedIn',
     link: 'https://www.linkedin.com/in/hussamkhatib/',
   },
