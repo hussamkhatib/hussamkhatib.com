@@ -6,12 +6,12 @@ import Image from 'next/image'
 export function Header() {
   return (
     <header className="mb-8 flex items-center gap-4">
-      <Image className='rounded-full' src="/hero.jpeg" alt="Abid Kamal" width={100} height={100} />
+      <Image className='rounded-full' src="/hero.jpg" alt="Hussam Khatib" width={100} height={100} />
 
 
       <div>
         <Link href="/" className="font-medium text-black dark:text-white">
-          Abid Kamal
+          Hussam Khatib
         </Link>
         <TextEffect
           as="p"
@@ -20,7 +20,7 @@ export function Header() {
           className="text-zinc-600 dark:text-zinc-500"
           delay={0.5}
         >
-          Muslim Social Media Coach
+          Software Engineer
         </TextEffect>
       </div>
     </header>

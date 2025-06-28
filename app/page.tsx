@@ -1,7 +1,6 @@
 'use client'
 import { motion } from 'motion/react'
 import { XIcon } from 'lucide-react'
-import { Spotlight } from '@/components/ui/spotlight'
 import { Magnetic } from '@/components/ui/magnetic'
 import {
   MorphingDialog,
@@ -11,11 +10,12 @@ import {
   MorphingDialogContainer,
 } from '@/components/ui/morphing-dialog'
 import {
-  REELS,
-  SERVICES,
+  PROJECTS,
   SOCIAL_LINKS,
 } from './data'
 import Image from 'next/image'
+import { Header } from './header'
+import Link from 'next/link'
 
 const VARIANTS_CONTAINER = {
   hidden: { opacity: 0 },
@@ -124,100 +124,73 @@ function MagneticSocialLink({
 
 export default function Personal() {
   return (
-    <motion.main
-      className="space-y-24"
-      variants={VARIANTS_CONTAINER}
-      initial="hidden"
-      animate="visible"
-    >
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
+    <>
+      <Header />
+      <motion.main
+        className="space-y-24"
+        variants={VARIANTS_CONTAINER}
+        initial="hidden"
+        animate="visible"
       >
-        <div className="flex-1">
-          <p className="text-zinc-600 dark:text-zinc-400">
-            $1m+ generated for clients
-            Helping Muslims grow and sell on social media
-          </p>
-        </div>
-      </motion.section>
+        <motion.section
+          variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+        >
+          <div className="flex-1">
+            <p className="text-zinc-600 dark:text-zinc-400">
+              Software Engineer passionate about building impactful products. Currently learning {" "}
+              <Link
+                href="/arabic"
+                className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              >
+                arabic
+                <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
+              </Link> and sales.
+            </p>
+          </div>
+        </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Selected Reels</h3>
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-          {REELS.map((reel) => (
-            <div key={reel.description} className="space-y-2">
-              <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
-                <ProjectVideo src={reel.video} />
-              </div>
-              <div className="px-1">
-                <a
-                  className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
-                  href={reel.link}
-                  target="_blank"
-                >
-                  {reel.description}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
-                </a>
-
-              </div>
-            </div>
-          ))}
-        </div>
-      </motion.section>
-
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <div className="flex flex-col space-y-2">
-          {SERVICES.map((job, idx) => (
-            <a
-              className="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
-              href={job.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={idx}
-            >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
-              <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
-                <div className="relative flex w-full flex-row items-center gap-2">
-                  {job.image && (
-                    <Image src={job.image} alt={job.title} width={30} height={30} />
-                  )}
-                  <div>
-                    <h4 className="font-normal dark:text-zinc-100">
-                      {job.title}
-                    </h4>
-
-                  </div>
+        <motion.section
+          variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+        >
+          <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {PROJECTS.map((reel) => (
+              <div key={reel.description} className="space-y-2">
+                <div className="relative rounded-2xl bg-zinc-50/40 p-1 ring-1 ring-zinc-200/50 ring-inset dark:bg-zinc-950/40 dark:ring-zinc-800/50">
+                  <ProjectVideo src={reel.video} />
+                </div>
+                <div className="px-1">
+                  <a
+                    className="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+                    href={reel.link}
+                    target="_blank"
+                  >
+                    {reel.description}
+                    <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
+                  </a>
 
                 </div>
               </div>
-            </a>
-          ))}
-        </div>
-      </motion.section>
+            ))}
+          </div>
+        </motion.section>
 
-      <motion.section
-        variants={VARIANTS_SECTION}
-        transition={TRANSITION_SECTION}
-      >
-        <h3 className="mb-5 text-lg font-medium">Connect</h3>
-        <div className="flex items-center justify-start space-x-3">
-          {SOCIAL_LINKS.map((link) => (
-            <MagneticSocialLink key={link.label} link={link.link}>
-              {link.label}
-            </MagneticSocialLink>
-          ))}
-        </div>
-      </motion.section>
-    </motion.main>
+        <motion.section
+          variants={VARIANTS_SECTION}
+          transition={TRANSITION_SECTION}
+        >
+          <h3 className="mb-5 text-lg font-medium">Connect</h3>
+          <div className="flex items-center justify-start space-x-3">
+            {SOCIAL_LINKS.map((link) => (
+              <MagneticSocialLink key={link.label} link={link.link}>
+                {link.label}
+              </MagneticSocialLink>
+            ))}
+          </div>
+        </motion.section>
+      </motion.main>
+    </>
   )
 }

@@ -1,5 +1,5 @@
 {
-  "name": "nim",
+  "name": "hussamkhatib",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -11,12 +11,13 @@
   "dependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "clsx": "^2.1.1",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.468.0",
     "motion": "^11.15.0",
     "next": "15.1.1",
     "next-themes": "^0.4.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "sugar-high": "^0.9.3",
     "tailwind-merge": "^2.5.5"
   },
@@ -24,8 +25,8 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
     "eslint": "^9",
     "eslint-config-next": "15.1.1",
     "postcss": "^8",

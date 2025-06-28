@@ -1,13 +1,7 @@
-type Reel = {
+type Project = {
   description: string
   link: string
   video: string
-}
-
-type Service = {
-  title: string
-  link: string
-  image?: string
 }
 
 type SocialLink = {
@@ -15,42 +9,26 @@ type SocialLink = {
   link: string
 }
 
-export const REELS: Reel[] = [
+export const PROJECTS: Project[] = [
   {
-    description: '8K Porsche 911 Turbo S',
-    link: 'https://www.tiktok.com/@muslimcontentcoach/video/7340713817225121056',
-    video: 'reel1.mp4',
+    description: 'Pasta',
+    link: 'https://www.pastacopy.app/',
+    video: 'pasta.mp4',
   },
   {
-    description: 'Some people are just born different ',
-    link: 'https://www.tiktok.com/@muslimcontentcoach/video/7338862603306798369',
-    video: 'reel2.mp4',
-  },
-]
-
-export const SERVICES: Service[] = [
-  {
-    title: 'Master Content Creation (Free Full Course)',
-    link: 'https://whop.com/master-content-creation-free',
-    image: '/mc-uni.webp',
-  },
-  {
-    title: 'Need Personal Help with growing and selling on Social Media?',
-    link: 'https://muslimcontentcoach.co/form?utm_source=instagram&utm_medium=organic&utm_campaign=bio',
+    description: 'ShipperCRM',
+    link: 'https://www.shippercrm.com/',
+    video: 'shippercrm.mp4',
   },
 ]
 
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     label: 'Instagram',
-    link: 'https://www.instagram.com/muslimcontentcoach',
+    link: 'https://www.instagram.com/hussamkhatib_/',
   },
   {
-    label: 'TikTok',
-    link: 'https://www.tiktok.com/@muslimcontentcoach',
-  },
-  {
-    label: 'Youtube',
-    link: 'https://www.youtube.com/@AbidContentCoach',
+    label: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/hussamkhatib/',
   },
 ]

@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
-import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 
@@ -17,10 +16,10 @@ export const metadata: Metadata = {
     canonical: '/'
   },
   title: {
-    default: 'Abid Kamal - Muslim Social Media Coach',
-    template: '%s | Abid Kamal'
+    default: 'Hussam Khatib - Software Engineer',
+    template: '%s | Hussam Khatib'
   },
-  description: 'Abid Kamal is a Muslim Social Media Coach who helps Muslims grow and sell on social media.',
+  description: 'Hussam Khatib is a Software Engineer',
 };
 
 const geist = Geist({
@@ -51,7 +50,6 @@ export default function RootLayout({
         >
           <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
             <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
-              <Header />
               {children}
               <Footer />
             </div>
