@@ -17,6 +17,7 @@ pnpm-debug.log*
 /.svelte-kit
 /package
 .vercel
+.netlify/
 .output
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
