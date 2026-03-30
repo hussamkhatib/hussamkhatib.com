@@ -1,4 +1,6 @@
-# Astro Starter Kit: Minimal
+# Astro site (hussamkhatib.com)
+
+This repo’s default branch includes the prior [SvelteKit](https://kit.svelte.dev/) demo history merged in; the live site is built with [Astro](https://astro.build/).
 
 ```sh
 pnpm create astro@latest -- --template minimal

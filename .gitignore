@@ -12,10 +12,20 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# SvelteKit (legacy tree in repo history)
+/build
+/.svelte-kit
+/package
+.vercel
+.output
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
 
 # environment variables
 .env
 .env.production
+.env.*
+!.env.example
 
 # macOS-specific files
 .DS_Store
