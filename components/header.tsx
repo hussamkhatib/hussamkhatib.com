@@ -2,7 +2,8 @@ import Link from "next/link"
 
 const navLinks: { label: string; href: string }[] = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "Work", href: "/work" },
+  // { label: "About", href: "/about" },
 ]
 
 export function Header() {
