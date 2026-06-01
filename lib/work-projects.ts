@@ -1,5 +1,5 @@
 import type { LucideIcon } from "lucide-react"
-import { Brain, CircleDollarSign, Globe2 } from "lucide-react"
+import { CircleDollarSign, Globe2 } from "lucide-react"
 
 export type WorkProject = {
   id: string
@@ -19,21 +19,6 @@ export type WorkProject = {
 }
 
 export const workProjects: WorkProject[] = [
-  {
-    id: "sales-ops",
-    icon: Brain,
-    title: "Sales Ops System",
-    meta: "Ayoub Eleshi · Rizq Rise",
-    thesis:
-      "Built setter-program automation so managers run from one dashboard, the floor stays competitive in real time, and daily or weekly reporting covers outcomes—not spreadsheet archaeology.",
-    bullets: [
-      "Dashboard: a centralized view—charts and a performance table—for the setter manager. Rows or cells signal red, yellow, or green against targets so who’s on pace is obvious without digging.",
-      "Competition: every new booking triggers a Slack alert, alongside a live leaderboard for the day so setters can see where they stand and push harder.",
-      "Reporting: end-of-day and end-of-week rollups for setter KPIs, plus speed-to-lead, so volume, quality, and response discipline stay visible over time.",
-      "Recording summaries route themselves to the right Slack channels and spaces—no manual forwarding after calls.",
-    ],
-  },
-
   {
     id: "commissionpro",
     icon: CircleDollarSign,
