@@ -14,26 +14,26 @@ export type SetterRow = {
 }
 
 const DEFAULT_DATA: SetterRow[] = [
-  { name: "Alex",   dials: 510, pickups: 62, convos: 31, bookings: 17, showed: 11, closes: 2, pickupRate: 12, convToBook: 55, showRate: 65,  setToClose: 12, showToClose: 18 },
-  { name: "Jordan", dials: 480, pickups: 28, convos: 9,  bookings: 4,  showed: 6,  closes: 0, pickupRate: 6,  convToBook: 44, showRate: 150, setToClose: 0,  showToClose: 0  },
-  { name: "Marcus", dials: 560, pickups: 55, convos: 24, bookings: 9,  showed: 4,  closes: 0, pickupRate: 10, convToBook: 38, showRate: 44,  setToClose: 0,  showToClose: 0  },
+  { name: "Ahmed", dials: 510, pickups: 62, convos: 31, bookings: 17, showed: 11, closes: 2, pickupRate: 12, convToBook: 55, showRate: 65, setToClose: 12, showToClose: 18 },
+  { name: "Neha", dials: 480, pickups: 28, convos: 9, bookings: 4, showed: 6, closes: 0, pickupRate: 6, convToBook: 44, showRate: 150, setToClose: 0, showToClose: 0 },
+  { name: "Adeeb", dials: 560, pickups: 55, convos: 24, bookings: 9, showed: 4, closes: 0, pickupRate: 10, convToBook: 38, showRate: 44, setToClose: 0, showToClose: 0 },
 ]
 
 const THRESHOLDS = {
-  pickupRate:  { green: 50, amber: 35 },
-  convToBook:  { green: 40, amber: 25 },
-  showRate:    { green: 70, amber: 50 },
-  setToClose:  { green: 7,  amber: 3  },
+  pickupRate: { green: 50, amber: 35 },
+  convToBook: { green: 40, amber: 25 },
+  showRate: { green: 70, amber: 50 },
+  setToClose: { green: 7, amber: 3 },
   showToClose: { green: 30, amber: 25 },
 } as const
 
 type RateKey = keyof typeof THRESHOLDS
 
 const RATE_COLS: { key: RateKey; lines: [string, string] }[] = [
-  { key: "pickupRate",  lines: ["Pick-up", "rate"] },
-  { key: "convToBook",  lines: ["Convo→", "booking"] },
-  { key: "showRate",    lines: ["Show", "rate"] },
-  { key: "setToClose",  lines: ["Set-to-", "close"] },
+  { key: "pickupRate", lines: ["Pick-up", "rate"] },
+  { key: "convToBook", lines: ["Convo→", "booking"] },
+  { key: "showRate", lines: ["Show", "rate"] },
+  { key: "setToClose", lines: ["Set-to-", "close"] },
   { key: "showToClose", lines: ["Show-to-", "close"] },
 ]
 
@@ -47,25 +47,25 @@ function rateClass(value: number, key: RateKey): string {
 }
 
 function computeTotals(data: SetterRow[]): SetterRow {
-  const dials    = data.reduce((s, r) => s + r.dials, 0)
-  const pickups  = data.reduce((s, r) => s + r.pickups, 0)
-  const convos   = data.reduce((s, r) => s + r.convos, 0)
+  const dials = data.reduce((s, r) => s + r.dials, 0)
+  const pickups = data.reduce((s, r) => s + r.pickups, 0)
+  const convos = data.reduce((s, r) => s + r.convos, 0)
   const bookings = data.reduce((s, r) => s + r.bookings, 0)
-  const showed   = data.reduce((s, r) => s + r.showed, 0)
-  const closes   = data.reduce((s, r) => s + r.closes, 0)
+  const showed = data.reduce((s, r) => s + r.showed, 0)
+  const closes = data.reduce((s, r) => s + r.closes, 0)
   return {
-    name:        "Team Total",
+    name: "Team Total",
     dials,
     pickups,
     convos,
     bookings,
     showed,
     closes,
-    pickupRate:  dials    ? Math.round((pickups  / dials)    * 100) : 0,
-    convToBook:  convos   ? Math.round((bookings / convos)   * 100) : 0,
-    showRate:    bookings ? Math.round((showed   / bookings) * 100) : 0,
-    setToClose:  bookings ? Math.round((closes   / bookings) * 100) : 0,
-    showToClose: showed   ? Math.round((closes   / showed)   * 100) : 0,
+    pickupRate: dials ? Math.round((pickups / dials) * 100) : 0,
+    convToBook: convos ? Math.round((bookings / convos) * 100) : 0,
+    showRate: bookings ? Math.round((showed / bookings) * 100) : 0,
+    setToClose: bookings ? Math.round((closes / bookings) * 100) : 0,
+    showToClose: showed ? Math.round((closes / showed) * 100) : 0,
   }
 }
 
